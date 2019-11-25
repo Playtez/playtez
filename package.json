@@ -1,0 +1,7 @@
+{
+  "name": "playtez.me",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Aaron Pleitez <pleitez.aaron12@gmail.com>",
+  "license": "MIT"
+}
