@@ -1,7 +1,18 @@
 {
-  "name": "playtez.me",
-  "version": "0.0.1",
-  "main": "index.js",
-  "author": "Aaron Pleitez <pleitez.aaron12@gmail.com>",
-  "license": "MIT"
+    "name": "playtez.me",
+    "version": "0.0.1",
+    "main": "index.js",
+    "author": "Aaron Pleitez <pleitez.aaron12@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "develop": "gatsby develop",
+        "clean": "gatsby clean",
+        "build": "gatsby build",
+        "serve": "gatsby serve"
+    },
+    "dependencies": {
+        "gatsby": "^2.18.3",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0"
+    }
 }
