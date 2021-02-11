@@ -2,7 +2,6 @@ import { graphql } from "gatsby";
 import React from "react";
 
 const BlogPosts = ({ data }) => {
-  console.log({ data });
   return <h1>this is blogposts</h1>;
 };
 

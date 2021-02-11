@@ -2,8 +2,7 @@ import { graphql } from "gatsby";
 import React from "react";
 
 const Posts = ({ data }) => {
-  console.log("this is in posts", { data });
-  return <div> heelo posts</div>;
+  return <div> posts</div>;
 };
 
 export default Posts;
