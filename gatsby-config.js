@@ -1,9 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: "playez-site",
+    title: "Aaron Pleitez",
+    author: {
+      name: "Aaron Pleitez",
+      description: "",
+    },
+    siteUrl: "https://playtez.me",
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -15,7 +19,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts`,
+        path: `${__dirname}/posts`,
       },
     },
     "gatsby-plugin-offline",

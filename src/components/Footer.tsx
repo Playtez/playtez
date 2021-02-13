@@ -1,23 +1,31 @@
 import React from "react";
 
-interface HeaderProps {
-  children: React.ReactNode;
-}
-
-export const Header = () => {
+export const Footer = () => {
   return (
-    <div className="bg-gray-900 text-white p-4">
-      <div className="max-w-screen-xl flex justify-between mx-auto">
-        <div className="flex justify-center text-center font-semibold font-mono">
-          {"< "}
-          <br />
-          playtez.me
-          <br />
-          {"/>"}
-        </div>
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <nav
+          className="-mx-5 -my-2 flex flex-wrap justify-center"
+          aria-label="Footer"
+        >
+          <div className="px-5 py-2">
+            <a href="#" className="text-base text-gray-500 hover:text-gray-900">
+              Home
+            </a>
+          </div>
+          <div className="px-5 py-2">
+            <a href="#" className="text-base text-gray-500 hover:text-gray-900">
+              About
+            </a>
+          </div>
 
-        <div className="flex items-center space-x-4 text-lg">
-          <h1 className="">Aaron Pleitez</h1>
+          <div className="px-5 py-2">
+            <a href="#" className="text-base text-gray-500 hover:text-gray-900">
+              Blog
+            </a>
+          </div>
+        </nav>
+        <div className="mt-8 flex justify-center space-x-6">
           <a href="#" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">Instagram</span>
             <svg
@@ -62,6 +70,9 @@ export const Header = () => {
             </svg>
           </a>
         </div>
+        <p className="mt-8 text-center text-base text-gray-400">
+          &copy; 2021 All rights reserved.
+        </p>
       </div>
     </div>
   );

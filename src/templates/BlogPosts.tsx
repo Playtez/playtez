@@ -1,8 +1,33 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-const BlogPosts = ({ data }) => {
-  return <h1>this is blogposts</h1>;
+export interface BlogPostTemplateProps {
+  data: {
+    mdx: {
+      id: string;
+      frontmatter: {
+        title: string;
+        date?: string;
+        summary?: string;
+      };
+      fields: {
+        slug: string;
+      };
+      body: any;
+    };
+  };
+}
+
+const BlogPosts = ({ data }: BlogPostTemplateProps) => {
+  console.log(data);
+  return (
+    <div>
+      <div className="prose prose-lg">
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </div>
+    </div>
+  );
 };
 
 export const data = graphql`
@@ -12,6 +37,7 @@ export const data = graphql`
         date
         title
       }
+      body
     }
   }
 `;
