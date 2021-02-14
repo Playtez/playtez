@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-gray-300">
+    <div className="flex flex-col h-screen overflow-hidden">
       <header>
         <Header />
       </header>
