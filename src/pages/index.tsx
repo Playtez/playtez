@@ -17,7 +17,7 @@ const IndexPage = () => {
           <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
               <a
-                href="#"
+                href="/books/Atomic-Habits"
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
               >
                 Get started
@@ -26,7 +26,7 @@ const IndexPage = () => {
           </div>
         </div>
       </main>
-      <div className="mt-10">
+      <div className="mt-10 mx-20">
         <Terminal />
       </div>
     </Page>

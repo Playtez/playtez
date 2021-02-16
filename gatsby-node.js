@@ -1,10 +1,10 @@
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions;
-  if (page.path === "/") {
-    page.matchPath = `/*`;
-    createPage(page);
-  }
-};
+// exports.onCreatePage = async ({ page, actions }) => {
+//   const { createPage } = actions;
+//   if (page.path === "/") {
+//     page.matchPath = `/*`;
+//     createPage(page);
+//   }
+// };
 
 const { createFilePath } = require("gatsby-source-filesystem");
 const path = require("path");

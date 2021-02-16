@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Page } from "../components";
 
 export interface BlogPostTemplateProps {
   data: {
@@ -20,13 +21,12 @@ export interface BlogPostTemplateProps {
 }
 
 const BlogPosts = ({ data }: BlogPostTemplateProps) => {
-  console.log(data);
   return (
-    <div>
-      <div className="prose prose-lg">
+    <Page>
+      <div className="prose prose-lg border-gray-500 border-r border-l space-y-6">
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </div>
-    </div>
+    </Page>
   );
 };
 
