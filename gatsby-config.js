@@ -9,6 +9,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "260559174",
@@ -16,10 +25,23 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 400,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "posts",
-        path: `${__dirname}/posts`,
+        name: "blogPosts",
+        path: `${__dirname}/blogPosts`,
       },
     },
     "gatsby-plugin-offline",

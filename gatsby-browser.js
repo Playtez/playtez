@@ -2,6 +2,7 @@ import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { Layout } from "./src/components";
 import "./src/styles/styles.css";
+import { BrowserRouter } from "react-router-dom";
 
 const components = {
   h1: (props) => (
@@ -14,7 +15,7 @@ const components = {
   code: (props) => {
     return (
       <div className="bg-white rounded-lg max-w-min p-4">
-        <span className="" {...props} />;
+        <span className="" {...props} />
       </div>
     );
   },
@@ -33,8 +34,10 @@ const components = {
 };
 export const wrapRootElement = ({ element }) => {
   return (
-    <MDXProvider components={components}>
-      <Layout>{element}</Layout>
-    </MDXProvider>
+    <BrowserRouter>
+      <MDXProvider components={components}>
+        <Layout>{element}</Layout>
+      </MDXProvider>
+    </BrowserRouter>
   );
 };

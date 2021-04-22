@@ -1,0 +1,78 @@
+---
+category: code
+title: Netlify-CMS
+date: Feb. 12, 2021
+---
+
+# Working with yaml using Netlify-CMS & Gatsby
+
+How to configure an image posted on the body widget, in the content manager.
+
+Assuming this is your starting point...
+
+```
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img   // media_folder at the file level
+public_folder: /img      // public_folder at the file level
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content'
+    create: true
+    slug: 'index'
+    media_folder: ''      // media_folder at the file level
+    public_folder: ''     // public_folder at the collection level
+    path: '{{title}}/index'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+```
+
+## Understanding how the CMS is reading yaml file
+
+```
+
+// media folder gets saved in root directory of project
+// media_folder should match the path to the repo
+
+media_folder: static/uploads   // i.e. rootProject/static/uploads
+
+
+// public folder gets saved in public directory
+// public_folder should match to what you append to your
+//   URL to navigate to the asset
+
+
+public_folder: /uploads     // i.e. rootProject/public/uploads
+
+```
+
+## solve
+
+In order to connect both the media folder and public public_folder you must refernce the folders at the file level
+
+```
+media_folder: static/img
+public_folder: /img
+
+
+collections:
+  - ....
+
+
+    media_folder: "/{{media_folder}}"
+    public_folder: "/{{public_folder}}"
+
+
+    path: '...
+
+
+
+```
