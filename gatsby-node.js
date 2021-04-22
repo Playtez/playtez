@@ -14,11 +14,24 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode });
+    const sourceName = getNode(node.parent).sourceInstanceName;
 
     createNodeField({
       name: "slug",
       node,
       value,
+    });
+
+    createNodeField({
+      name: "sourceName",
+      node,
+      value: sourceName,
+    });
+
+    createNodeField({
+      name: "category",
+      node,
+      value: node.frontmatter.category,
     });
   }
 };
@@ -35,6 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               date
               title
+              category
             }
             fields {
               slug
