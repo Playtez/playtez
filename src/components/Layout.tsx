@@ -8,12 +8,12 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen justify-between">
       <header>
         <Header />
       </header>
-      <main className="mb-auto pb-6">{children}</main>
-      <footer className="">
+      <main className="mb-auto">{children}</main>
+      <footer>
         <Footer />
       </footer>
     </div>

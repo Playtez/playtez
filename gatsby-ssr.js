@@ -2,7 +2,6 @@ import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { Layout } from "./src/components";
 import "./src/styles/styles.css";
-import { BrowserRouter } from "react-router-dom";
 
 const components = {
   h1: (props) => (
@@ -40,10 +39,8 @@ const components = {
 };
 export const wrapRootElement = ({ element }) => {
   return (
-    <BrowserRouter>
-      <MDXProvider components={components}>
-        <Layout>{element}</Layout>
-      </MDXProvider>
-    </BrowserRouter>
+    <MDXProvider components={components}>
+      <Layout>{element}</Layout>
+    </MDXProvider>
   );
 };

@@ -36,7 +36,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   const query = await graphql(`
@@ -59,6 +59,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  if (query.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
   // creates a page for all posts
   createPage({
     path: "/posts",

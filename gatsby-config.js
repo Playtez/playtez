@@ -44,7 +44,6 @@ module.exports = {
         path: `${__dirname}/blogPosts`,
       },
     },
-    "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
     "gatsby-plugin-postcss",
